@@ -2,16 +2,24 @@
 # dvc
 
 <!-- badges: start -->
+![R](https://github.com/andrewcstewart/dvc-r/workflows/R/badge.svg)
 <!-- badges: end -->
 
-The goal of dvc is to ...
+This package provides a simple wrapper around [Data Version Control (DVC)](https://dvc.org/).
 
 ## Installation
 
 You can install the released version of dvc from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("dvc")
+# install.packages("dvc") # (Not on CRAN yet)
+```
+
+Or install the development version from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("andrewcstewart/dvc")
 ```
 
 ## Example
@@ -25,11 +33,11 @@ library(dvc)
 
 # TODO
 
-- [ ] `dvc init`
-- [ ] `dvc add`
+- [x] `dvc init`
+- [x] `dvc add`
 - [ ] `dvc run`
-- [ ] `dvc push`
-
+- [x] `dvc push`
+- [ ] install dvc
 
 ## Notes
 
