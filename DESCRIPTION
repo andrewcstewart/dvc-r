@@ -13,5 +13,7 @@ Imports:
     here,
     usethis,
     git2r,
-    glue
+    glue,
+    lifecycle
 RoxygenNote: 7.1.1
+RdMacros: lifecycle
