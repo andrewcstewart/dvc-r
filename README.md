@@ -5,6 +5,7 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/dvc)](https://CRAN.R-project.org/package=dvc)
 [![R build status](https://github.com/andrewcstewart/dvc-r/workflows/R-CMD-check/badge.svg)](https://github.com/andrewcstewart/dvc-r/actions)
+![pkgdown](https://github.com/andrewcstewart/dvc-r/workflows/pkgdown/badge.svg)
 <!-- badges: end -->
 
 This package provides a simple wrapper around [Data Version Control (DVC)](https://dvc.org/).
