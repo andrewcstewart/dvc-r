@@ -2,7 +2,6 @@
 # dvc
 
 <!-- badges: start -->
-![R](https://github.com/andrewcstewart/dvc-r/workflows/R/badge.svg)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/dvc)](https://CRAN.R-project.org/package=dvc)
 [![R build status](https://github.com/andrewcstewart/dvc-r/workflows/R-CMD-check/badge.svg)](https://github.com/andrewcstewart/dvc-r/actions)
