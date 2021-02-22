@@ -1,4 +1,7 @@
 test_that("basic test", {
+  # instlal dvc
+  dvc::install_dvc()
+
   # create temp directory
   tmp <- fs::dir_create(fs::file_temp())
   withr::local_dir(tmp)
