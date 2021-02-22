@@ -3,6 +3,7 @@ test_that("basic test", {
   tmp <- fs::dir_create(fs::file_temp())
   withr::local_dir(tmp)
   git2r::init()
+  git2r::config(user.name = "testthta", user.email = "test@that.org")
   expect_true(git2r::in_repository())
 
   # test init
