@@ -1,6 +1,5 @@
 #' Install DVC
 #'
-#' @return
 #' @export
 #'
 install_dvc <- function() {
