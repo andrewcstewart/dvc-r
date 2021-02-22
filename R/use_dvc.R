@@ -9,12 +9,19 @@
 #' @export
 use_dvc <- function(repo = here::here()) {
 
-  # Initialize dvc
-  cmd <- "dvc init"
-  system(cmd)
+  # Check if in git repo
+  if(git2r::in_repository()) {
 
-  ## Add file and commit
-  git2r::add(repo, fs::path(repo,".dvc/.gitignore"))
-  git2r::add(repo, fs::path(repo,".dvc/config"))
-  git2r::commit(repo, "Initialize DVC")
+    # Initialize dvc
+    cmd <- "dvc init"
+    system(cmd)
+
+    ## Add file and commit
+    git2r::add(repo, fs::path(repo,".dvc/.gitignore"))
+    git2r::add(repo, fs::path(repo,".dvc/config"))
+    git2r::commit(repo, "Initialize DVC")
+  }
+  else {
+    message("No scm detected.")
+  }
 }

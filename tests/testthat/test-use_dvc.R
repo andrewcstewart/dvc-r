@@ -1,0 +1,23 @@
+test_that("basic test", {
+  # create temp directory
+  tmp <- fs::dir_create(fs::file_temp())
+  withr::local_dir(tmp)
+  git2r::init()
+  expect_true(git2r::in_repository())
+
+  # test init
+  dvc::use_dvc(repo = getwd())
+
+  # test dvc add
+  write.csv2(x = mtcars, file = "mtcars.csv")
+  dvc::add(path = "mtcars.csv", repo = getwd())
+
+  # test remote
+  tmp_remote <- fs::dir_create(fs::file_temp())
+  dvc::remote_add(name = "myremote", repo = getwd(), url = tmp_remote)
+  dvc::push()
+
+  # remove the directory
+  fs::dir_delete(tmp)
+  fs::dir_delete(tmp_remote)
+})
