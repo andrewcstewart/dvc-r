@@ -3,6 +3,6 @@
 #' @export
 #'
 install_dvc <- function() {
-  cmd <- "pip install dvc"
+  cmd <- "pip3 install dvc"
   system(cmd)
 }
