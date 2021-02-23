@@ -27,6 +27,8 @@ jobs:
           reticulate::install_miniconda()
           reticulate::py_install(c('dvc'), pip = TRUE)
         shell: Rscript {0}
+        env:
+          PATH: "$PATH:$HOME/.local/bin"
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
