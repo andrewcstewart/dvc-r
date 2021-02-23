@@ -20,15 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
+      - name: Prereqs
+        run: |
+          pip3 install dvc
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck","reticulate"))
           remotes::install_deps(dependencies = TRUE)
-          reticulate::install_miniconda()
-          reticulate::py_install(c('dvc'), pip = TRUE)
+          # reticulate::install_miniconda()
+          # reticulate::py_install(c('dvc'), pip = TRUE)
         shell: Rscript {0}
-        env:
-          PATH: "$PATH:$HOME/.local/bin"
+        # env:
+        #   PATH: "$PATH:$HOME/.local/bin"
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
