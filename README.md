@@ -42,9 +42,14 @@ library(dvc)
 - [x] `dvc push`
 - [ ] install dvc
 
-## Notes
+## Usage
 
 ### dvc init
+
+```
+dvc::use_dvc()
+```
+
 
 ```
 git status
