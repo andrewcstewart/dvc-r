@@ -4,10 +4,14 @@
 \alias{use_dvc}
 \title{Initialize a DVC project.}
 \usage{
-use_dvc(repo = here::here())
+use_dvc(repo = here::here(), git_commit = TRUE, git_message = "Initialize DVC")
 }
 \arguments{
 \item{repo}{Path to root of repository (project root by default)}
+
+\item{git_commit}{Include git commits? (default: TRUE)}
+
+\item{git_message}{Git commit message.}
 }
 \description{
 Initialize DVC in the current directory. Expects directory

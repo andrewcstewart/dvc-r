@@ -4,12 +4,16 @@
 \alias{add}
 \title{Track data files or directories with DVC.}
 \usage{
-add(path, repo = here::here())
+add(path, repo = here::here(), git_commit = TRUE, git_message = "Add raw data")
 }
 \arguments{
 \item{path}{Input files/directories to add.}
 
 \item{repo}{Path to root of repository (project root by default)}
+
+\item{git_commit}{Include git commits? (default: TRUE)}
+
+\item{git_message}{Git commit message.}
 }
 \description{
 Documentation: <https://man.dvc.org/add>
