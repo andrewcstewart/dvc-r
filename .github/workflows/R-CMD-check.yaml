@@ -22,7 +22,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Prereqs
         run: |
-          pip3 install dvc
+          pip3 install dvc --user
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck","reticulate"))
