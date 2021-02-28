@@ -19,6 +19,17 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+      - name: Check Python version
+        run: |
+          which python
+          python --version
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+      - name: Check Python version
+        run: |
+          which python
+          python --version
       - uses: r-lib/actions/setup-r@v1
       - name: Prereqs
         run: |

@@ -46,6 +46,8 @@ library(dvc)
 
 ### dvc init
 
+To initialize a new project, just run `use_dvc`.  By default this will configure your `Rproj` current project (based on `here::here()`)
+
 ```
 dvc::use_dvc()
 ```
