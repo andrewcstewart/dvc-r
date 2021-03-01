@@ -30,10 +30,15 @@ jobs:
         run: |
           which python
           python --version
-      - uses: r-lib/actions/setup-r@v1
-      - name: Prereqs
+      - name: Install DVC
         run: |
-          pip3 install dvc --user
+          pip install dvc --user
+          dvc --help
+      - uses: r-lib/actions/setup-r@v1
+      - name: Check Python version
+        run: |
+          which python
+          python --version
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck","reticulate"))
