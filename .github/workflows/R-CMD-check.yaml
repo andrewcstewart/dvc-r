@@ -32,7 +32,8 @@ jobs:
           python --version
       - name: Install DVC
         run: |
-          pip install dvc --user
+          which pip
+          pip install dvc
           dvc --help
       - uses: r-lib/actions/setup-r@v1
       - name: Check Python version
