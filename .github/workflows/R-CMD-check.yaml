@@ -19,10 +19,6 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - name: Check Python version
-        run: |
-          which python
-          python --version
       - uses: actions/setup-python@v2
         with:
           python-version: "3.9"
@@ -32,23 +28,16 @@ jobs:
           python --version
       - name: Install DVC
         run: |
-          which pip
           pip install dvc
           dvc --help
       - uses: r-lib/actions/setup-r@v1
-      - name: Check Python version
-        run: |
-          which python
-          python --version
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck","reticulate"))
+          install.packages(c("remotes", "rcmdcheck", "reticulate"))
           remotes::install_deps(dependencies = TRUE)
           # reticulate::install_miniconda()
           # reticulate::py_install(c('dvc'), pip = TRUE)
         shell: Rscript {0}
-        # env:
-        #   PATH: "$PATH:$HOME/.local/bin"
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
