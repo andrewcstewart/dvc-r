@@ -2,6 +2,7 @@
 
 export(add)
 export(install_dvc)
+export(pull)
 export(push)
 export(remote_add)
 export(use_dvc)

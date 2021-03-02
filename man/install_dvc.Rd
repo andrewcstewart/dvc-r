@@ -4,7 +4,14 @@
 \alias{install_dvc}
 \title{Install DVC}
 \usage{
-install_dvc()
+install_dvc(with = "pip", user = FALSE, remote = FALSE)
+}
+\arguments{
+\item{with}{Method to install dvc with: pip, conda, brew, choco, snap.}
+
+\item{user}{Option for pip.}
+
+\item{remote}{Depending on the type of the remote storage you plan to use, you might need to install optional dependencies: [s3], [azure], [gdrive], [gs], [oss], [ssh]. Use [all] to include them all.}
 }
 \description{
 Install DVC

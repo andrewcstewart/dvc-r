@@ -32,61 +32,26 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(dvc)
 ## basic example code
-```
 
-# TODO
+# install dvc
+dvc::install_dvc()
 
-- [x] `dvc init`
-- [x] `dvc add`
-- [ ] `dvc run`
-- [x] `dvc push`
-- [ ] install dvc
-
-## Usage
-
-### dvc init
-
-To initialize a new project, just run `use_dvc`.  By default this will configure your `Rproj` current project (based on `here::here()`)
-
-```
+# setup dvc in your current project
 dvc::use_dvc()
+
+# tell dvc to track a file
+write.csv2(x = mtcars, file = "mtcars.csv")
+dvc::add(path = "mtcars.csv")
+
+# setup remote storage
+dvc::remote_add(name = "myremote", url = "s3://my-bucket/dvc-storage")
+dvc::push()
+dvc::pull()
 ```
 
+## Overview
 
-```
-git status
-Changes to be committed:
-        new file:   .dvc/.gitignore
-        new file:   .dvc/config
-        ...
+[Data Version Control](https://dvc.org/), or DVC, is a data and ML experiment management tool that takes advantage of the existing engineering toolset that you're already familiar with (Git, CI/CD, etc.).  See the [official documentation](https://dvc.org/doc) for a full overview of DVC's functionality.
+ 
+The purpose of this package is to aid in using DVC from within R.  For example, you may want to run DVC commands from an RMarkdown file as part of an analysis. The primary focus of the package currently implements the data tracking functionality of DVC.  
 
-git commit -m "Initialize DVC"
-```
-
-### dvc add
-
-```
-dvc add data/data.xml
-
-git add data/data.xml.dvc data/.gitignore
-
-git commit -m "Add raw data"
-```
-
-make changes
-
-```
-dvc add data/data.xml
-
-git commit data/data.xml.dvc -m "Dataset updates"
-
-dvc push
-```
-
-### dvc remote
-
-```
-dvc remote add -d storage s3://my-bucket/dvc-storage
-
-git commit .dvc/config -m "Configure remote storage"
-```

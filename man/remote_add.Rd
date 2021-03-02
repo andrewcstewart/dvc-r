@@ -16,5 +16,5 @@ remote_add(name, url, default = TRUE, repo = here::here())
 \item{repo}{Path to root of repository (project root by default)}
 }
 \description{
-Add a new data remote.
+Documentation: <https://man.dvc.org/remote>
 }
