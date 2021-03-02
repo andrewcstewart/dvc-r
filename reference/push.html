@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Upload tracked files or directories to remote storage. — push" />
-<meta property="og:description" content="Upload tracked files or directories to remote storage." />
+<meta property="og:description" content="Documentation: &amp;lt;https://man.dvc.org/push&amp;gt;" />
 
 
 
@@ -109,11 +109,23 @@
     </div>
 
     <div class="ref-description">
-    <p>Upload tracked files or directories to remote storage.</p>
+    <p>Documentation: &lt;https://man.dvc.org/push&gt;</p>
     </div>
 
-    <pre class="usage"><span class='fu'>push</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>push</span><span class='op'>(</span>targets <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>, remote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>targets</th>
+      <td><p>Limit command scope to these tracked files/directories, .dvc files, or stage names.</p></td>
+    </tr>
+    <tr>
+      <th>remote</th>
+      <td><p>Remote storage to push to.</p></td>
+    </tr>
+    </table>
 
 
   </div>

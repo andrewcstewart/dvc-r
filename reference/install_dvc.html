@@ -112,8 +112,24 @@
     <p>Install DVC</p>
     </div>
 
-    <pre class="usage"><span class='fu'>install_dvc</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>install_dvc</span><span class='op'>(</span>with <span class='op'>=</span> <span class='st'>"pip"</span>, user <span class='op'>=</span> <span class='cn'>FALSE</span>, remote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>with</th>
+      <td><p>Method to install dvc with: pip, conda, brew, choco, snap.</p></td>
+    </tr>
+    <tr>
+      <th>user</th>
+      <td><p>Option for pip.</p></td>
+    </tr>
+    <tr>
+      <th>remote</th>
+      <td><p>Depending on the type of the remote storage you plan to use, you might need to install optional dependencies: [s3], [azure], [gdrive], [gs], [oss], [ssh]. Use [all] to include them all.</p></td>
+    </tr>
+    </table>
 
 
   </div>

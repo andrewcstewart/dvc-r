@@ -59,7 +59,6 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
 <div id="dvc" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#dvc" class="anchor"></a>dvc</h1></div>
@@ -83,70 +82,30 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">dvc</span><span class="op">)</span>
-<span class="co">## basic example code</span></code></pre></div>
+<span class="co">## basic example code</span>
+
+<span class="co"># install dvc</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/install_dvc.html">install_dvc</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># setup dvc in your current project</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/use_dvc.html">use_dvc</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># tell dvc to track a file</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv2</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mtcars</span>, file <span class="op">=</span> <span class="st">"mtcars.csv"</span><span class="op">)</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/add.html">add</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"mtcars.csv"</span><span class="op">)</span>
+
+<span class="co"># setup remote storage</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/remote_add.html">remote_add</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"myremote"</span>, url <span class="op">=</span> <span class="st">"s3://my-bucket/dvc-storage"</span><span class="op">)</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/push.html">push</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">dvc</span><span class="fu">::</span><span class="fu"><a href="reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
-</div>
-<div id="todo" class="section level1">
-<h1 class="hasAnchor">
-<a href="#todo" class="anchor"></a>TODO</h1>
-<ul>
-<li>
-<input type="checkbox" disabled checked><code>dvc init</code>
-</li>
-<li>
-<input type="checkbox" disabled checked><code>dvc add</code>
-</li>
-<li>
-<input type="checkbox" disabled><code>dvc run</code>
-</li>
-<li>
-<input type="checkbox" disabled checked><code>dvc push</code>
-</li>
-<li>
-<input type="checkbox" disabled>
-install dvc</li>
-</ul>
-<div id="usage" class="section level2">
+<div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<div id="dvc-init" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dvc-init" class="anchor"></a>dvc init</h3>
-<p>To initialize a new project, just run <code>use_dvc</code>. By default this will configure your <code>Rproj</code> current project (based on <code><a href="https://here.r-lib.org//reference/here.html">here::here()</a></code>)</p>
-<pre><code><a href="reference/use_dvc.html">dvc::use_dvc()</a></code></pre>
-<pre><code>git status
-Changes to be committed:
-        new file:   .dvc/.gitignore
-        new file:   .dvc/config
-        ...
-
-git commit -m "Initialize DVC"</code></pre>
-</div>
-<div id="dvc-add" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dvc-add" class="anchor"></a>dvc add</h3>
-<pre><code>dvc add data/data.xml
-
-git add data/data.xml.dvc data/.gitignore
-
-git commit -m "Add raw data"</code></pre>
-<p>make changes</p>
-<pre><code>dvc add data/data.xml
-
-git commit data/data.xml.dvc -m "Dataset updates"
-
-dvc push</code></pre>
-</div>
-<div id="dvc-remote" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dvc-remote" class="anchor"></a>dvc remote</h3>
-<pre><code>dvc remote add -d storage s3://my-bucket/dvc-storage
-
-git commit .dvc/config -m "Configure remote storage"</code></pre>
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p><a href="https://dvc.org/">Data Version Control</a>, or DVC, is a data and ML experiment management tool that takes advantage of the existing engineering toolset that you’re already familiar with (Git, CI/CD, etc.). See the <a href="https://dvc.org/doc">official documentation</a> for a full overview of DVC’s functionality.</p>
+<p>The purpose of this package is to aid in using DVC from within R. For example, you may want to run DVC commands from an RMarkdown file as part of an analysis. The primary focus of the package currently implements the data tracking functionality of DVC.</p>
 </div>
 </div>
-</div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
